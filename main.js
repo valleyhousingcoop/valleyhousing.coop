@@ -72,11 +72,8 @@ export default {
         username: user.username,
       });
 
-      return Response.json({
-        ok: true,
-        username: user.username,
-        id: user.id,
-        staged: user.staged ?? null,
+      return new Response(renderSuccessPage(email), {
+        headers: { "Content-Type": "text/html; charset=utf-8" },
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : "Request failed";
@@ -181,6 +178,62 @@ function base64EncodeUtf8(value) {
     binary += String.fromCharCode(byte);
   }
   return btoa(binary);
+}
+
+function renderSuccessPage(email) {
+  const safeEmail = escapeHtml(email);
+  const homeUrl = "https://valleyhousing.coop";
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subscribed</title>
+    <style>
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        margin: 40px;
+        max-width: 640px;
+      }
+      h1 {
+        margin-bottom: 12px;
+      }
+      .button {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 10px 16px;
+        background: #111;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Subscription confirmed</h1>
+    <p>Your email ${safeEmail} has been subscribed to valley housing coop newsletter.</p>
+    <a class="button" href="${homeUrl}">Return to home</a>
+  </body>
+</html>`;
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => {
+    switch (char) {
+      case "&":
+        return "&amp;";
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case '"':
+        return "&quot;";
+      case "'":
+        return "&#39;";
+      default:
+        return char;
+    }
+  });
 }
 
 function sleep(ms) {
