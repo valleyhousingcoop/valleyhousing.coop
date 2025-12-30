@@ -1,10 +1,3 @@
-const DEFAULTS = {
-  baseUrl: "https://forum.valleyhousing.coop",
-  apiUser: "system",
-  to: "subscribe-to-newsletter@valleyhousing.coop",
-  groupId: 61,
-};
-
 export default {
   async fetch(request, env) {
     if (request.method === "GET") {
@@ -35,14 +28,31 @@ export default {
     }
 
     const apiKey = env.API_KEY;
+    const baseUrl = env.BASE_URL;
+    const apiUser = env.API_USER;
+    const to = env.TO_ADDRESS;
+    const groupIdRaw = env.GROUP_ID;
+
     if (!apiKey) {
       return new Response("Server misconfigured: missing API_KEY", { status: 500 });
     }
+    if (!baseUrl) {
+      return new Response("Server misconfigured: missing BASE_URL", { status: 500 });
+    }
+    if (!apiUser) {
+      return new Response("Server misconfigured: missing API_USER", { status: 500 });
+    }
+    if (!to) {
+      return new Response("Server misconfigured: missing TO_ADDRESS", { status: 500 });
+    }
+    if (!groupIdRaw) {
+      return new Response("Server misconfigured: missing GROUP_ID", { status: 500 });
+    }
 
-    const baseUrl = env.BASE_URL || DEFAULTS.baseUrl;
-    const apiUser = env.API_USER || DEFAULTS.apiUser;
-    const to = env.TO_ADDRESS || DEFAULTS.to;
-    const groupId = Number(env.GROUP_ID || DEFAULTS.groupId);
+    const groupId = Number(groupIdRaw);
+    if (!Number.isFinite(groupId)) {
+      return new Response("Server misconfigured: GROUP_ID must be a number", { status: 500 });
+    }
 
     try {
       await handleMail({ baseUrl, apiKey, apiUser, from: email, to });

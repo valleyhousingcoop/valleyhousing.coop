@@ -1,0 +1,11 @@
+{
+  "name": "vhc-workers",
+  "main": "main.js",
+  "compatibility_date": "2024-05-01",
+  "vars": {
+    "BASE_URL": "https://forum.valleyhousing.coop",
+    "API_USER": "system",
+    "TO_ADDRESS": "subscribe-to-newsletter@valleyhousing.coop",
+    "GROUP_ID": "61"
+  }
+}
