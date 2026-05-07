@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Newsletter Subscribe</title>
+    <title>Valley Housing Co-op</title>
     <style>
       body {
         font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
         margin: 40px;
         max-width: 480px;
+        /* center on page  */
+        margin-left: auto;
+        margin-right: auto;
       }
       label,
       input,
@@ -28,15 +31,33 @@
       small {
         color: #555;
       }
+      h1 img {
+        width: 100%;
+        height: auto;
+      }
     </style>
   </head>
   <body>
-    <h1>Subscribe</h1>
+    <h1><img src="./Logo Black.png" alt="Valley Housing Co-op Logo" /></h1>
+    <p>We envision a world in which housing is a right, not a commodity, and land is returned to the commons to be collectively stewarded for generations to come.</p>
+    <p>Our mission is to grow the movement for permanently affordable cooperatively owned housing and land for the benefit of our communities.</p>
+
+    <p>Our Aims:</p>
+    <ul>
+      <li>Membership: Supporting transparent democratic governance through effective communication systems for members. Sharing what we learn to inspire others as part of a broader movement.</li>
+      <li>Land Stewardship: Stewarding the land and relationships to the commons for the benefit of the community, ecosystem, and inhabitants.</li>
+      <li>Development: Expanding the portfolio of Valley Housing Coop and aligned groups like Community Land Trusts to support self determined safe housing and remove land from the real estate market.</li>
+      <li>Finance: Managing and planning the co-op’s finances to ensure future stability and fair distribution of wealth. Mobilizing capital to support our mission.</li>
+    </ul>
+    <h2>Get Involved</h2>
+    <p><a href="https://forum.valleyhousing.coop/signup">Become a community member owner</a> to receive updates on our housing co-op, have the option to participate in governance, and read community discussions.</p>
+    <p><a href="https://forum.valleyhousing.coop/c/public/blog/37">Read our blog</a> for occasional news and updates.</p>
     <form method="post" action="https://vhc-workers.s-shanabrook.workers.dev">
-      <label for="email">Email address</label>
+      <label for="email">Sign up for our newsletter:</label>
       <input id="email" name="email" type="email" required />
       <button type="submit">Subscribe</button>
-      <small>Make sure the form posts to your worker URL.</small>
     </form>
+
+
   </body>
 </html>
