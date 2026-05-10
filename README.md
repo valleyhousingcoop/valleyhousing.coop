@@ -27,3 +27,5 @@ Reach out to one of the circle's above if you are interest in their area.
   <input id="email" name="email" type="email" required />
   <button type="submit">Subscribe</button>
 </form>
+
+<small>Have a suggestion for this website? Open an issue or submit a pull request to <a href="https://github.com/valleyhousingcoop/valleyhousing.coop">this repo</a>.</small>
