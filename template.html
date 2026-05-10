@@ -7,13 +7,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
         font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-        margin: 40px;
+        margin: 40px auto;
+        width: min(100% - 32px, 480px);
         max-width: 480px;
-        /* center on page  */
-        margin-left: auto;
-        margin-right: auto;
+      }
+      @media (max-width: 520px) {
+        body {
+          margin-block: 24px;
+        }
       }
       label,
       input,
