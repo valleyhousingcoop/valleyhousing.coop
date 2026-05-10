@@ -1,5 +1,7 @@
 # ![Valley Housing Co-op Logo](<./Logo Black.png>)
 
+Valley Housing Coop is located in Greenfield MA, leasing 25 acres from [Valley Community Land Trust](www.vclt.org) with 2 duplexes and plans for future housing development.
+
 We envision a world in which housing is a right, not a commodity, and land is returned to the commons to be collectively stewarded for generations to come.
 
 Our mission is to grow the movement for permanently affordable cooperatively owned housing and land for the benefit of our communities.
