@@ -18,7 +18,7 @@ Our Aims:
 
 Reach out to one of the circle's above if you are interest in their area.
 
-[Read our blog](https://forum.valleyhousing.coop/c/public/blog/37) for occasional news and updates.
+[Read our blog](https://forum.valleyhousing.coop/c/public/blog/37) for news and updates.
 
 <form method="post" action="https://vhc-workers.s-shanabrook.workers.dev">
   <label for="email">Sign up for our newsletter:</label>
