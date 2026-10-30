@@ -39,13 +39,20 @@
       small {
         color: #555;
       }
-      h1 img {
-        width: 100%;
+      img {
+        max-width: 100%;
         height: auto;
       }
     </style>
   </head>
   <body>
 {{BODY}}
+    <form method="post" action="https://vhc-workers.s-shanabrook.workers.dev">
+      <label for="email">Sign up for our newsletter:</label>
+      <input id="email" name="email" type="email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <p><small>Have a suggestion for this website? Open an issue or submit a pull request to <a href="https://github.com/valleyhousingcoop/valleyhousing.coop">this repo</a>.</small></p>
   </body>
 </html>

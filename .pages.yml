@@ -1,0 +1,26 @@
+media:
+  - name: images
+    label: Website images
+    input: media
+    output: media
+    rename: safe
+    categories: [image]
+
+content:
+  - name: homepage
+    label: Website homepage
+    type: file
+    path: README.md
+    format: raw
+    operations:
+      rename: false
+      delete: false
+    fields:
+      - name: body
+        label: Page content
+        type: rich-text
+        required: true
+        options:
+          media: images
+          format: markdown
+          switcher: false
