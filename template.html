@@ -43,24 +43,6 @@
         max-width: 100%;
         height: auto;
       }
-      .membership {
-        border-top: 1px solid #ddd;
-        margin-top: 32px;
-        padding-top: 8px;
-      }
-      .membership dl {
-        margin: 16px 0;
-      }
-      .membership dl div {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        margin: 8px 0;
-      }
-      .membership dd {
-        margin: 0;
-        font-variant-numeric: tabular-nums;
-      }
     </style>
   </head>
   <body>
@@ -71,25 +53,11 @@
       <button type="submit">Subscribe</button>
     </form>
 
-    <section class="membership" aria-labelledby="membership-heading">
-      <h2 id="membership-heading">Our members</h2>
-      <p id="membership-status" role="status">Loading membership counts…</p>
-      <div id="membership-counts" hidden>
-        <p><strong><span data-count="total"></span> members in total</strong></p>
-        <dl>
-          <div><dt>Resident</dt><dd data-count="resident"></dd></div>
-          <div><dt>Lender / donor</dt><dd data-count="lenderDonor"></dd></div>
-          <div><dt>Community</dt><dd data-count="community"></dd></div>
-        </dl>
-        <p><small>Each person is counted once: resident first, then lender/donor, then community. Counts refresh hourly from our forum.</small></p>
-      </div>
-      <noscript><p>Enable JavaScript to load membership counts.</p></noscript>
-      <p><small><a href="https://forum.valleyhousing.coop/g/">View groups on our forum</a></small></p>
-    </section>
+    <p id="membership-counts" role="status"></p>
 
     <p><small>Have a suggestion for this website? Open an issue or submit a pull request to <a href="https://github.com/valleyhousingcoop/valleyhousing.coop">this repo</a>.</small></p>
     <script type="module">
-      const status = document.getElementById("membership-status");
+      const status = document.getElementById("membership-counts");
       try {
         const response = await fetch("https://vhc-workers.s-shanabrook.workers.dev/api/member-counts", {
           credentials: "omit",
@@ -104,13 +72,13 @@
         ) {
           throw new Error("Invalid membership counts");
         }
-        for (const element of document.querySelectorAll("[data-count]")) {
-          element.textContent = counts[element.dataset.count].toLocaleString();
-        }
-        document.getElementById("membership-counts").hidden = false;
-        status.hidden = true;
+        status.textContent =
+          `${counts.total.toLocaleString()} members (` +
+          `${counts.resident.toLocaleString()} resident, ` +
+          `${counts.lenderDonor.toLocaleString()} lender/donor, ` +
+          `${counts.community.toLocaleString()} community)`;
       } catch {
-        status.textContent = "Membership counts are temporarily unavailable.";
+        status.textContent = "Member count unavailable.";
       }
     </script>
   </body>
