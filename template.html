@@ -73,10 +73,10 @@
           throw new Error("Invalid membership counts");
         }
         status.textContent =
-          `${counts.total.toLocaleString()} members (` +
+          `We currently have ${counts.total.toLocaleString()} members (` +
           `${counts.resident.toLocaleString()} resident, ` +
           `${counts.lenderDonor.toLocaleString()} lender/donor, ` +
-          `${counts.community.toLocaleString()} community)`;
+          `${counts.community.toLocaleString()} community).`;
       } catch {
         status.textContent = "Member count unavailable.";
       }
