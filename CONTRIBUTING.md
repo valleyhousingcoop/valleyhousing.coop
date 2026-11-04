@@ -16,7 +16,7 @@ Allow the workflow to finish before checking <https://valleyhousing.coop>.
 The logo is part of **Page content**. Use the image picker to select or upload an
 image from **Website images**. Keep the logo at the top of the page.
 
-The newsletter signup form and website feedback footer are kept in
+The newsletter signup form, membership counter, and website feedback footer are kept in
 `template.html`. They remain on the website when you edit the page content.
 
 ## One-time setup for a repository administrator
@@ -59,3 +59,30 @@ run `npm run build` again and refresh the browser.
 `scripts/build.mjs` renders `README.md` into `template.html`, producing the
 ignored `index.html`. Keep development and editing instructions in this file;
 everything in `README.md` appears on the public homepage.
+
+## Membership counter
+
+The homepage fetches `/api/member-counts` from the existing
+`vhc-workers.s-shanabrook.workers.dev` Cloudflare Worker. `member-counts.js` reads
+these public Discourse groups without authentication:
+
+1. Resident: `resident-members`.
+2. Lender / donor: `investor-members`.
+3. Community: `oc-members`, `paid-members`, and `waived-members`.
+
+Each person is assigned to the first matching type in that order, so the three
+counts add up to the total. The Worker follows pagination and uses only member
+IDs for deduplication; its response and one-hour cache contain only aggregate
+counts. No member names, email addresses, IDs, or API keys are sent to the
+homepage. It does not change the forum's existing public group visibility.
+
+If a group becomes private or a request fails, the page shows counts as
+temporarily unavailable instead of publishing partial or zero counts. Keep any
+future credentials on the Worker; even a scoped key must not go in the HTML.
+The newsletter's existing `API_KEY` secret is not used for counting members.
+
+After Worker changes, run `npm test` and deploy with
+`npx wrangler@4 deploy` (Cloudflare login required). The existing newsletter
+configuration and secret must remain in place. Deploy the Worker before
+publishing template changes through GitHub Pages. Run `npm run build` and
+preview the page locally to check the counter.

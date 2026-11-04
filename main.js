@@ -1,5 +1,11 @@
+import { memberCounts } from "./member-counts.js";
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
+    if (new URL(request.url).pathname === "/api/member-counts") {
+      return memberCounts(request, ctx);
+    }
+
     if (request.method === "GET") {
       return new Response("OK. POST form data with an email field.", {
         headers: { "Content-Type": "text/plain; charset=utf-8" },
