@@ -1,6 +1,14 @@
 ![Valley Housing Co-op Logo](media/logo.png)
 
-Valley Housing Coop is located in Greenfield MA, leasing 25 acres from [Valley Community Land Trust](www.vclt.org) with 2 duplexes and plans for future housing development.
+Valley Housing Coop is located in Greenfield MA, leasing 25 acres from [Valley Community Land Trust](www.vclt.org) with 2 duplexes. We have plans for future housing development and acquisition to become a scatter site housing cooperative. 
+
+## We are growing!!
+
+Support the [17 Adams St]([https://www.google.com/maps/search/17+Adams+St?entry=gmail&source=g](https://www.google.com/maps/search/17+Adams+St?entry=gmail&source=g)) tenants association in Easthampton to buy their building from a private equity investor with the help of Valley Housing Coop! We are fundraising $400,000 to close by March 31st. Please support this project to show that tenant power can win and we can keep our communities affordable.    
+
+[Please read more and make a tax deductible donation]([https://www.zeffy.com/en-US/donation-form/buy-back-17-adams-street-for-the-community-2](https://www.zeffy.com/en-US/donation-form/buy-back-17-adams-street-for-the-community-2)) thanks to our fiscal host (Warren J Plaut Charitable Trust). You can also help by passing this along this story to friends! THANK YOU!
+
+![unnamed.jpg](media/unnamed.jpg)
 
 We envision a world in which housing is a right, not a commodity, and land is returned to the commons to be collectively stewarded for generations to come.
 
@@ -15,11 +23,6 @@ Our Aims:
 - **[Finance:](mailto:finance@valleyhousing.coop)** Managing and planning the co-op’s finances to ensure future stability and fair distribution of wealth. Mobilizing capital to support our mission.
 
 ## Get Involved
-
-Support the [17 Adams St](https://www.google.com/maps/search/17+Adams+St?entry=gmail&source=g) tenants association in Easthampton to buy their building from a private equity investor with the help of Valley Housing Coop! We are fundraising $400,000 to close by March 31st. Please support this project to show that tenant power can win and we can keep our communities affordable.    
-[Please read more and make a tax deductible donation](https://www.zeffy.com/en-US/donation-form/buy-back-17-adams-street-for-the-community-2) thanks to our fiscal host (Warren J Plaut Charitable Trust). You can also help by passing this along this story to friends! THANK YOU!
-
-![unnamed.jpg](media/unnamed.jpg)
 
 [Become a community member owner](https://forum.valleyhousing.coop/signup) to receive updates, have the option to participate in governance, and read community discussions.
 
