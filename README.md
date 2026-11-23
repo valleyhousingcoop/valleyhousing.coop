@@ -6,8 +6,6 @@ We envision a world in which housing is a right, not a commodity, and land is re
 
 Our mission is to grow the movement for permanently affordable cooperatively owned housing and land for the benefit of our communities.
 
-![Screenshot 2026-11-23 at 9.24.38 AM.png](blob:https:/app.pagescms.org/fc3da5f0-cd8b-4a49-a1b7-74c5aae7bef5)
-
 Our Aims:
 
 - **[Membership:](mailto:membership@valleyhousing.coop)** Supporting transparent democratic governance through effective communication systems for members. Sharing what we learn to inspire others as part of a broader movement.
