@@ -4,9 +4,9 @@ Valley Housing Coop is located in Greenfield MA, leasing 25 acres from [Valley C
 
 ## We are growing!!
 
-Support the [17 Adams St]([https://www.google.com/maps/search/17+Adams+St?entry=gmail&source=g](https://www.google.com/maps/search/17+Adams+St?entry=gmail&source=g)) tenants association in Easthampton to buy their building from a private equity investor with the help of Valley Housing Coop! We are fundraising $400,000 to close by March 31st. Please support this project to show that tenant power can win and we can keep our communities affordable.    
+Support the 17 Adams St tenants association in Easthampton to buy their building from a private equity investor with the help of Valley Housing Coop! We are fundraising $400,000 to close by March 31st. Please support this project to show that tenant power can win and we can keep our communities affordable.    
 
-[Please read more and make a tax deductible donation]([https://www.zeffy.com/en-US/donation-form/buy-back-17-adams-street-for-the-community-2](https://www.zeffy.com/en-US/donation-form/buy-back-17-adams-street-for-the-community-2)) thanks to our fiscal host (Warren J Plaut Charitable Trust). You can also help by passing this along this story to friends! THANK YOU!
+[Please read more and make a tax deductible donation](https://www.zeffy.com/en-US/donation-form/buy-back-17-adams-street-for-the-community-2) thanks to our fiscal host (Warren J Plaut Charitable Trust). You can also help by passing this along this story to friends! THANK YOU!
 
 ![unnamed.jpg](media/unnamed.jpg)
 
