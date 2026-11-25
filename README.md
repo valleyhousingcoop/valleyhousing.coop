@@ -26,7 +26,7 @@ Our Aims:
 
 [Become a community member owner](https://forum.valleyhousing.coop/signup) to receive updates, have the option to participate in governance, and read community discussions.
 
-Reach out to one of the circle's above if you are interest in their area.
+Reach out to one of the circle's above if you are interest in their area, or reach out to [membership@valleyhousing.coop](mailto:membership@valleyhousing.coop) for general inquiries.  
 
 Follow on Instagram @valleyhousing.coop
 
