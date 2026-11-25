@@ -28,5 +28,7 @@ Our Aims:
 
 Reach out to one of the circle's above if you are interest in their area.
 
+Follow on Instagram @valleyhousing.coop
+
 [Read our blog](https://forum.valleyhousing.coop/c/public/blog/37) for news and updates.
 
