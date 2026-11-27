@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Valley Housing Co-op</title>
+    <title>{{TITLE}}</title>
+    {{META}}
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <style>
@@ -46,16 +47,17 @@
     </style>
   </head>
   <body>
+    {{HOME_LINK}}
 {{BODY}}
+    <!-- home-only -->
     <form method="post" action="https://vhc-workers.s-shanabrook.workers.dev">
-      <label for="email">Sign up for our newsletter:</label>
+      <label for="email">{{NEWSLETTER_LABEL}}</label>
       <input id="email" name="email" type="email" required />
-      <button type="submit">Subscribe</button>
+      <button type="submit">{{NEWSLETTER_BUTTON}}</button>
     </form>
 
     <p id="membership-counts" role="status"></p>
 
-    <p><small>Have a suggestion for this website? Open an issue or submit a pull request to <a href="https://github.com/valleyhousingcoop/valleyhousing.coop">this repo</a>.</small></p>
     <script type="module">
       const status = document.getElementById("membership-counts");
       try {
@@ -81,5 +83,10 @@
         status.textContent = "Member count unavailable.";
       }
     </script>
+    <!-- /home-only -->
+    <footer>
+      <p><small>Have a suggestion for this website? Open an issue or submit a pull request to <a href="https://github.com/valleyhousingcoop/valleyhousing.coop">this repo</a>.</small></p>
+{{FOOTER_LINKS}}
+    </footer>
   </body>
 </html>

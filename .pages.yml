@@ -24,3 +24,108 @@ content:
           media: images
           format: markdown
           switcher: false
+
+  - name: pages
+    label: Pages
+    type: collection
+    path: content/pages
+    format: json
+    filename:
+      template: "{primary}.json"
+      field: create
+    subfolders: false
+    exclude: [.gitkeep]
+    operations:
+      rename: false
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: body
+        label: Page content
+        type: rich-text
+        required: true
+        options:
+          media: images
+          format: markdown
+          switcher: false
+
+  - name: site
+    label: Site settings
+    type: file
+    path: content/site.json
+    format: json
+    operations:
+      rename: false
+      delete: false
+    fields:
+      - name: title
+        label: Site title
+        type: string
+        required: true
+      - name: description
+        label: Search description
+        type: text
+      - name: socialImage
+        label: Social sharing image
+        type: image
+        options:
+          media: images
+      - name: newsletterLabel
+        label: Newsletter signup wording
+        type: string
+        required: true
+      - name: newsletterButton
+        label: Newsletter button label
+        type: string
+        required: true
+      - name: footerLinks
+        label: Footer links
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Link label
+            type: string
+            required: true
+          - name: url
+            label: Destination URL
+            type: string
+            required: true
+
+  - name: redirects
+    label: Redirects
+    type: file
+    path: content/redirects.json
+    format: json
+    operations:
+      rename: false
+      delete: false
+    fields:
+      - name: redirects
+        label: Redirects
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{from}"
+        fields:
+          - name: from
+            label: From path
+            description: A path on this site such as /join
+            type: string
+            pattern:
+              regex: '^/[A-Za-z0-9][A-Za-z0-9._~-]*(/[A-Za-z0-9][A-Za-z0-9._~-]*)*/?$'
+              message: Enter a site path such as /join or /go/join.
+            required: true
+          - name: to
+            label: Destination URL
+            description: A path on this site or an absolute web URL
+            type: string
+            required: true

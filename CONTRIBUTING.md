@@ -1,47 +1,45 @@
 # Editing the website
 
-The homepage can be edited visually with [Pages CMS](https://app.pagescms.org/).
-
 ## For editors
 
-1. Sign in to Pages CMS. If you were invited by email, use that email address;
-   you do not need a GitHub account.
+1. Sign in to [Pages CMS](https://app.pagescms.org/). If you were invited by
+   email, use that address. You can sign in without a GitHub account.
 2. Open `valleyhousingcoop/valleyhousing.coop` and select the `main` branch.
-3. Select **Website homepage**.
-4. Edit **Page content** using the formatting toolbar, then save.
+3. Choose the section you want to edit and save when finished.
 
-Saving to `main` publishes the change through the existing GitHub Pages workflow.
-Allow the workflow to finish before checking <https://valleyhousing.coop>.
+- **Website homepage** edits the same Markdown that appears in `README.md` on
+  GitHub. Use the visual toolbar for headings, links, and images. Keep the
+  logo at the top of the page.
+- **Pages** creates standalone pages. Give a new page a title and use the
+  create form's filename to set its URL. For example, `get-involved.json`
+  gives the page `/get-involved/`. Use lowercase letters, numbers, and
+  hyphens. Changing the title keeps the URL. Add a link from the homepage
+  or footer when you want people to find the page on the site.
+- **Site settings** controls the browser title, search description,
+  social sharing image, newsletter signup wording, and footer links.
+- **Redirects** creates shortcuts such as `/join`. Set the destination to a
+  path such as `/get-involved/` or a full web URL. The path `/join/` serves
+  a page that forwards visitors in the browser. Removing an entry removes
+  the shortcut at the next publish.
+- **Website images** holds uploaded images. Select an existing image or
+  upload one from the visual editor.
 
-The logo is part of **Page content**. Use the image picker to select or upload an
-image from **Website images**. Keep the logo at the top of the page.
+Saving to `main` publishes through GitHub Pages. Wait for the
+[Build and deploy Pages workflow](https://github.com/valleyhousingcoop/valleyhousing.coop/actions/workflows/pages.yml)
+before checking <https://www.valleyhousing.coop/>. If a build fails, open the
+workflow's build log to see which entry needs a correction.
 
-The newsletter signup form, membership counter, and website feedback footer are kept in
-`template.html`. They remain on the website when you edit the page content.
+## For repository administrators
 
-## One-time setup for a repository administrator
+Install the Pages CMS GitHub App using the
+[quick start](https://pagescms.org/docs/quick-start/). The app reads `.pages.yml`
+from the selected branch. Use the repository's **Collaborators** page in
+Pages CMS to [invite editors](https://pagescms.org/docs/configuration/collaborators/).
 
-1. Make sure `.pages.yml` and the accompanying template changes are on GitHub.
-2. Follow the [Pages CMS quick start](https://pagescms.org/docs/quick-start/):
-   sign in with GitHub and install its GitHub App for the
-   `valleyhousingcoop/valleyhousing.coop` repository.
-3. Open the repository in Pages CMS; it reads the existing `.pages.yml`.
-4. Before publishing the first CMS edit, select a temporary branch containing
-   these changes. Edit and save the homepage there, inspect the resulting
-   `README.md`, and build and preview that branch as described below. Check the
-   headings, lists, and links, as well as the logo, signup form, and footer.
-   Saves to this branch do not trigger the deployment workflow, which runs on
-   pushes to `main`.
-5. Switch to `main` for normal editing. Use the repository's **Collaborators**
-   page in Pages CMS to invite editors by email. See the
-   [collaborator documentation](https://pagescms.org/docs/configuration/collaborators/).
-
-Only `README.md` is exposed as editable page content. The configuration stores it as
-plain Markdown without front matter and disables renaming or deleting it in the
-CMS. The source-mode switch is hidden so editors start with formatted text.
-Images are stored in `media/`, with relative paths that work in both the GitHub
-README and the website. New uploads use safe filenames to avoid spaces in image
-URLs.
+Use a temporary branch to try CMS configuration changes or test content.
+Only builds from `main` publish to the custom domain. Standalone pages,
+settings, and redirects are stored under `content/`. Keep development
+instructions here and public homepage content in `README.md`.
 
 ## Building and previewing locally
 
@@ -49,16 +47,17 @@ With Node.js 22 installed, run:
 
 ```sh
 npm ci
+npm test
 npm run build
-python3 -m http.server 8000 --bind 127.0.0.1
+python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-Open <http://127.0.0.1:8000>. Stop the server with Ctrl-C. After further edits,
-run `npm run build` again and refresh the browser.
+Open <http://127.0.0.1:8000>. After further edits, run `npm run build` again
+and refresh the browser. Stop the server with Ctrl-C.
 
-`scripts/build.mjs` renders `README.md` into `template.html`, producing the
-ignored `index.html`. Keep development and editing instructions in this file;
-everything in `README.md` appears on the public homepage.
+The build renders the Markdown and copies the public images into `dist/`.
+GitHub Actions uploads this directory to GitHub Pages. The newsletter
+form and membership counter use the Cloudflare Worker described below.
 
 ## Membership counter
 
