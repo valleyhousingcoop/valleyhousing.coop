@@ -73,7 +73,8 @@ test("the static build renders the README, editor settings, pages, and redirects
   await assert.rejects(readFile(path.join(folder, "dist/content/site.json")), { code: "ENOENT" });
 
   await writeFile(page, JSON.stringify({ title: "Take part", body: "Help the co-op." }));
-  await writeFile(rules, '{"redirects": []}');
+  // Pages CMS can save a blank file after the last redirect is removed.
+  await writeFile(rules, "");
   const second = spawnSync(process.execPath, ["scripts/build.mjs"], { cwd: folder, encoding: "utf8" });
   assert.equal(second.status, 0, second.stderr);
   assert.match(await readFile(path.join(folder, "dist/get-involved/index.html"), "utf8"), /<h1>Take part<\/h1>/);

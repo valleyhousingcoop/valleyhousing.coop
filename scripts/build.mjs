@@ -15,7 +15,7 @@ const [readme, template, site, redirectFile, pageFiles] = await Promise.all([
   readFile(path.join(root, "README.md"), "utf8"),
   readFile(path.join(root, "template.html"), "utf8"),
   readJson("content/site.json"),
-  readJson("content/redirects.json"),
+  readJson("content/redirects.json", { allowEmpty: true }),
   readdir(path.join(root, "content/pages"), { withFileTypes: true }),
 ]);
 
@@ -112,9 +112,11 @@ for (const { route, to } of redirects.values()) {
 `);
 }
 
-async function readJson(file) {
+async function readJson(file, { allowEmpty = false } = {}) {
   try {
-    return JSON.parse(await readFile(path.join(root, file), "utf8"));
+    const content = await readFile(path.join(root, file), "utf8");
+    if (allowEmpty && !content.trim()) return {};
+    return JSON.parse(content);
   } catch (error) {
     throw new Error(`${file}: ${error.message}`, { cause: error });
   }
